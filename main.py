@@ -36,9 +36,6 @@ def main(page: ft.Page):
         snack_bar.content.value, snack_bar.bgcolor, snack_bar.open = message, color, True
         page.update()
 
-    def check_regex(input):
-        return re.search(r'\w+@[a-zA-Z0-9]+\.[a-zA-Z]{2,6}', input) is not None
-
     def clean_fields(e):
         for field in [_login.email_field, _login.senha_field]:
             field.value = ""

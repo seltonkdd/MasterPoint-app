@@ -1,9 +1,13 @@
 import requests
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 class Client:
     def __init__(self):
-        self.base_url = 'http://127.0.0.1:8000/api/v1/'
+        self.base_url = os.getenv('BASE_URL')
         self.session = requests.Session()
         self.token = None
 
@@ -12,6 +16,9 @@ class Client:
             if self.token:
                 self.session.headers.update({"Authorization": f"Bearer {self.token}"})
 
+            if not self.base_url:
+                return 'BASE URL não fornecida'
+            
             response = self.session.get(self.base_url + endpoint)
             status_code = response.status_code
             if 'application/json' in response.headers.get('Content-Type', ''):
@@ -27,6 +34,9 @@ class Client:
             self.session.headers.update({"Authorization": f"Bearer {self.token}"})
 
         try:
+            if not self.base_url:
+                return 'BASE URL não fornecida'
+
             response = self.get_request(self.base_url + endpoint)
             csrf_token = self.session.cookies.get('csrftoken')
 

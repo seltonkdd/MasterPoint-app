@@ -1,4 +1,3 @@
-from typing import List
 import flet as ft
 
 
@@ -19,6 +18,7 @@ class StartContainer(ft.Container):
         self.content = ft.Column(
                 elementos, horizontal_alignment=ft.CrossAxisAlignment.CENTER
             )
+
 
 class MainContainer(ft.Container):
     def __init__(self, height: int, controls, offset=[0,0]):
