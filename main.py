@@ -1,5 +1,5 @@
 import flet as ft
-import re, os
+import os
 
 from components import StartContainer, MainContainer
 from datatable import table_column, show_db
@@ -111,19 +111,28 @@ def main(page: ft.Page):
             show_snack_bar(resposta, 'red')
 
     def registrar_ponto():
-        p = gl.get_current_position()
+        p = None
+        try:
+            p = gl.get_current_position()
+        finally:
+            latitude = None
+            longitude = None
+            if p:
+                latitude = p.latitude
+                longitude = p.longitude
 
-        data = {
-            "punch": f'{datetime.now().date()} {time_text.value}',
-            "latitude": f'{p.latitude}',
-            "longitude": f'{p.longitude}'
-            }
-        
-        resposta = client.post_request('clocks/', data)
-        if not resposta:
-            show_snack_bar('Ponto registrado com sucesso!', 'green')
-        else:
-            show_snack_bar(resposta, 'red')
+            data = {
+                "punch": f'{datetime.now().date()} {time_text.value}',
+                "latitude": f'{latitude}',
+                "longitude": f'{longitude}'
+                }
+            
+            resposta = client.post_request('clocks/', data)
+            if not resposta:
+                show_snack_bar('Ponto registrado com sucesso!', 'green')
+            else:
+                show_snack_bar(resposta, 'red')
+            hide_timefield()
 
     def listar_pontos():
         resposta, status_code = client.get_request('clocks/')
@@ -150,7 +159,7 @@ def main(page: ft.Page):
     timefield.current = ft.Row(
         [
             time_text,
-            ft.TextButton("Salvar", on_click=lambda e: (registrar_ponto(), hide_timefield())),
+            ft.TextButton("Salvar", on_click=lambda e: registrar_ponto())
         ], alignment=ft.MainAxisAlignment.CENTER
     )
 

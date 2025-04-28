@@ -19,7 +19,7 @@ Pra esse frontend ser funcional, o backend deve estar rodando
 
 Python 3.9+
 
-Clone o projeto: 
+Clone o projeto: https://github.com/seltonkdd/MasterPoint-app
 
 Entre no diretório do projeto
 
