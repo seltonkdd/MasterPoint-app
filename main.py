@@ -111,7 +111,14 @@ def main(page: ft.Page):
             show_snack_bar(resposta, 'red')
 
     def registrar_ponto():
-        data = {"punch": f'{datetime.now().date()} {time_text.value}'}
+        p = gl.get_current_position()
+
+        data = {
+            "punch": f'{datetime.now().date()} {time_text.value}',
+            "latitude": f'{p.latitude}',
+            "longitude": f'{p.longitude}'
+            }
+        
         resposta = client.post_request('clocks/', data)
         if not resposta:
             show_snack_bar('Ponto registrado com sucesso!', 'green')

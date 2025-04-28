@@ -40,7 +40,7 @@ Ela sera usada como base para os endpoints que a aplicação vai acessar:
 Para login dos usuários
 
 `clocks/`
-Para visualização do registro de seus pontos
+Para visualização e registro de seus pontos
 
 #### Para rodar a aplicação, digite no terminal: `flet run`
 
