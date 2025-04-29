@@ -51,3 +51,8 @@ Para visualização e registro de seus pontos
 Pra mais informações visite a documentação do [Flet](https://flet.dev/docs/publish)
 
 No terminal, digite `flet build apk`
+
+# Screenshots
+![2025-04-28 19-35-22 - frame at 0m1s](https://github.com/user-attachments/assets/daa364cf-9479-4294-ad4b-ee502c494bb7)
+![2025-04-28 19-35-22 - frame at 0m20s](https://github.com/user-attachments/assets/796ca9ca-cb29-4e61-9ba2-b921218f3a26)
+![2025-04-28 19-35-22 - frame at 0m38s](https://github.com/user-attachments/assets/102adb37-08a3-480f-b8fa-df4364e536be)
