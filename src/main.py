@@ -1,12 +1,12 @@
+from datetime import datetime
 import flet as ft
 import os
 
 from components import StartContainer, MainContainer
 from datatable import table_column, show_db
-from datetime import datetime
 from gps import get_location_image_backend, get_geolocator
-
 from services import Client
+
 
 IMAGE_PATH = 'assets/imagem_gps.png'
 
