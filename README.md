@@ -45,7 +45,7 @@ Para visualização e registro de seus pontos
 `get_maps_image/{latitude}/{longitude}/`
 Para salvar a imagem da localização atual e mostrar na interface
 
-#### Para rodar a aplicação, digite no terminal: `flet run`
+#### Para rodar a aplicação, digite no terminal: `flet run src/main.py`
 
 # Build em APK
 
