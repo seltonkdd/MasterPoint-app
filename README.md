@@ -32,7 +32,7 @@ Em `.env` insira a url base da api do sistema
 
 Exemplo:
 
-    BASE_URL='http://localhost:8000/'
+    BASE_URL='http://localhost:8000/api/v1/'
 
 Ela sera usada como base para os endpoints que a aplicação vai acessar:
 
@@ -41,6 +41,9 @@ Para login dos usuários
 
 `clocks/`
 Para visualização e registro de seus pontos
+
+`get_maps_image/{latitude}/{longitude}/`
+Para salvar a imagem da localização atual e mostrar na interface
 
 #### Para rodar a aplicação, digite no terminal: `flet run`
 
