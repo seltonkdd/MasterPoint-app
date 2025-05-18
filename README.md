@@ -4,8 +4,6 @@ Um aplicativo mobile desenvolvido em Python e Flet
 
 O propósito desse projeto é ser um Aplicativo frontend de client-side, sendo o frontend do projeto Fullstack MasterPoint que desenvolvi
 
-Backend: (https://github.com/seltonkdd/api-MasterPoint)
-
 # Funcionalidades:
 
 - Uma interface amigável e responsiva para o lado do cliente
